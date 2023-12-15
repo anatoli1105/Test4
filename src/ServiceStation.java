@@ -1,9 +1,5 @@
-class ServiceStation  implements Servis{
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
-    };
-    public void checkEngine(){System.out.println("Проверяем двигатель");};
-    public void checkTrailer() {System.out.println("Проверяем прицеп");};
+class ServiceStation  {
+
 
 
 
@@ -11,22 +7,25 @@ class ServiceStation  implements Servis{
     public    void check(Car car, Bicycle bicycle, Truck truck) {
         if (car != null) {
             System.out.println("Обслуживаем " + car.getModelName());
-            for (int i = 0; i < car.wheelsCount; i++) {
-                updateTyre();
-            }
-            checkEngine();
+            car.updateTyre();
+            car.checkEngine();
+            System.out.println();
         } else if (truck != null) {
             System.out.println("Обслуживаем " + truck.getModelName());
-            for (int i = 0; i < truck.wheelsCount; i++) {
-                updateTyre();
+            truck.updateTyre();
+            truck.checkEngine();
+            truck.checkTrailer();
+            System.out.println();
+
             }
-            checkEngine();
-            checkTrailer();
-        } else if (bicycle != null) {
+
+        else if(bicycle!=null){
             System.out.println("Обслуживаем " + bicycle.getModelName());
-            for (int i = 0; i < bicycle.getWheelsCount(); i++) {
-                updateTyre();
-            }
+            bicycle.updateTyre();
+            System.out.println();
+        }
+
         }
     }
-}
+
+
