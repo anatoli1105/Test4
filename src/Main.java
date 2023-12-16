@@ -13,6 +13,8 @@ public class Main {
         Transport bicycle = new Bicycle("bicycle1",2);
         Transport bicycle2 = new Bicycle("bicycle2",2);
 
+        Transport tank=new Tank("t-34",0);
+
 
         ServiceStation station = new ServiceStation();
         station.check(car);
@@ -20,6 +22,8 @@ public class Main {
         station.check(bicycle2);
         System.out.println();
         station.check(null);
+        System.out.println();
+        station.check(tank);
 
     }
 }
